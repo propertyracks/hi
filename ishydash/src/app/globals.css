@@ -1,0 +1,91 @@
+@import "tailwindcss";
+
+:root {
+  --background: #1f1d1e;
+  --foreground: #e8e9f3;
+  --primary: #693b54;
+  --primary-dark: #5a2e47;
+  --primary-light: #7a4a63;
+  --card-bg: #2d2b2c;
+  --card-border: #3d3b3c;
+  --surface: #262425;
+  --text-secondary: #b0b0c0;
+}
+
+@theme inline {
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-primary: var(--primary);
+  --color-primary-dark: var(--primary-dark);
+  --color-primary-light: var(--primary-light);
+  --font-sans: var(--font-poppins), sans-serif;
+}
+
+@media (prefers-color-scheme: light) {
+  :root {
+    --background: #f5f5f5;
+    --foreground: #1f1d1e;
+    --primary: #693b54;
+    --primary-dark: #5a2e47;
+    --primary-light: #7a4a63;
+    --card-bg: #ffffff;
+    --card-border: #e8e8e8;
+    --surface: #f9f9f9;
+    --text-secondary: #5a5a6a;
+  }
+}
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  background: var(--background);
+  color: var(--foreground);
+  font-family: var(--font-poppins), sans-serif;
+  transition: background-color 0.3s ease, color 0.3s ease;
+  overflow-x: hidden;
+}
+
+/* Card styling */
+.glow-button {
+  position: relative;
+  background-color: var(--primary);
+  border: 1px solid var(--primary-dark);
+  transition: all 0.3s ease;
+}
+
+.glow-button:hover {
+  background-color: var(--primary-light);
+  border-color: var(--primary);
+}
+
+.glow-card {
+  background: var(--card-bg);
+  border: 1px solid var(--card-border);
+  transition: all 0.3s ease;
+}
+
+.glow-card:hover {
+  border-color: var(--primary);
+  background: var(--surface);
+}
+
+/* Semi-rounded pattern */
+.semi-rounded {
+  border-radius: 0.75rem;
+}
+
+.semi-rounded-lg {
+  border-radius: 1rem;
+}
+
+.semi-rounded-xl {
+  border-radius: 1.25rem;
+}
